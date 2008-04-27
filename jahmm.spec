@@ -28,7 +28,7 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-%define gcj_support 0
+%define gcj_support 1
 
 Name:           jahmm
 Version:        0.6.1
@@ -195,7 +195,7 @@ EOF
 }
 
 jahmm_script %{name} be.ac.ulg.montefiore.run.jahmm.apps.cli.Cli
-jahmm_script %{name}-viz be.ac.ulg.montefiore.run.jahmm.apps.JahmmViz
+#jahmm_script %{name}-viz be.ac.ulg.montefiore.run.jahmm.apps.JahmmViz
 
 %if %{gcj_support}
 %{_bindir}/aot-compile-rpm
@@ -226,7 +226,7 @@ fi
 %defattr(0644,root,root,0755)
 %doc CHANGES COPYING README THANKS
 %attr(0755,root,root) %{_bindir}/%{name}
-%attr(0755,root,root) %{_bindir}/%{name}-viz
+#%attr(0755,root,root) %{_bindir}/%{name}-viz
 %{_javadir}/%{name}-%{version}.jar
 %{_javadir}/%{name}.jar
 %dir %{_datadir}/%{name}
@@ -251,4 +251,3 @@ fi
 %files demo
 %defattr(-,root,root,0755)
 %{_datadir}/%{name}/*
-
