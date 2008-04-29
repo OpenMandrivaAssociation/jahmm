@@ -46,7 +46,6 @@ Patch0:         %{name}-0.6.1-build.patch
 Requires:       jpackage-utils >= 0:1.7.2
 BuildRequires:  ant
 BuildRequires:  ant-junit
-BuildRequires:  junit
 %if %{gcj_support}
 Requires(post): java-gcj-compat
 Requires(postun): java-gcj-compat
@@ -54,11 +53,13 @@ BuildRequires:  java-gcj-compat-devel
 %else
 Buildarch:      noarch
 %endif
+BuildRequires:  java-rpmbuild
+BuildRequires:  junit
 BuildRequires:  dblatex
+BuildRequires:  docbook-dtd-mathml20
 BuildRequires:  docbook-dtd44-xml
 BuildRequires:  docbook-style-xsl
 BuildRequires:  libxslt-proc
-BuildRequires:  docbook-dtd-mathml20
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
