@@ -32,7 +32,7 @@
 
 Name:           jahmm
 Version:        0.6.1
-Release:        %mkrel 0.0.1
+Release:        %mkrel 0.0.2
 Epoch:          0
 Summary:        Java implementation of Hidden Markov Model (HMM) related algorithms
 License:        GPLv2+
@@ -41,14 +41,12 @@ URL:            http://www.run.montefiore.ulg.ac.be/~francois/software/jahmm/
 Source0:        http://www.run.montefiore.ulg.ac.be/~francois/software/jahmm/files/jahmm-%{version}.tar.gz
 Source1:        %{name}-%{version}.pom
 Source2:        %{name}-desktop.desktop
-Source3:        http://www.run.montefiore.ulg.ac.be/~francois/software/jahmm/doc/userguide/0.6.1/jahmm-userguide-0.6.1-src.tar.gz
+Source3:        http://www.run.montefiore.ulg.ac.be/~francois/software/jahmm/doc/userguide/%{version}/jahmm-userguide-%{version}-src.tar.gz
 Patch0:         %{name}-0.6.1-build.patch
 Requires:       jpackage-utils >= 0:1.7.2
 BuildRequires:  ant
 BuildRequires:  ant-junit
 %if %{gcj_support}
-Requires(post): java-gcj-compat
-Requires(postun): java-gcj-compat
 BuildRequires:  java-gcj-compat-devel
 %else
 Buildarch:      noarch
@@ -97,9 +95,7 @@ Javadoc for %{name}.
 %package demo
 Summary:        Demo for %{name}
 Group:          Development/Java
-AutoReqProv:    no
 Requires:       %{name} = %{epoch}:%{version}-%{release}
-Requires:       /usr/bin/env
 
 %description demo
 Demonstrations and samples for %{name}.
@@ -208,19 +204,13 @@ jahmm_script %{name} be.ac.ulg.montefiore.run.jahmm.apps.cli.Cli
 %post
 %update_maven_depmap
 %if %{gcj_support}
-if [ -x %{_bindir}/rebuild-gcj-db ]
-then
-  %{_bindir}/rebuild-gcj-db || :
-fi
+%{update_gcjdb}
 %endif
 
 %postun
 %update_maven_depmap
 %if %{gcj_support}
-if [ -x %{_bindir}/rebuild-gcj-db ]
-then
-  %{_bindir}/rebuild-gcj-db || :
-fi
+%{clean_gcjdb}
 %endif
 
 %files
