@@ -32,7 +32,7 @@
 
 Name:           jahmm
 Version:        0.6.1
-Release:        %mkrel 0.0.2
+Release:        %mkrel 3.0.2
 Epoch:          0
 Summary:        Java implementation of Hidden Markov Model (HMM) related algorithms
 License:        GPLv2+
