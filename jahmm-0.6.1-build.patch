@@ -1,0 +1,24 @@
+--- jahmm-0.6.1/build.xml.orig	2008-03-19 14:20:05.000000000 -0400
++++ jahmm-0.6.1/build.xml	2008-03-19 14:22:59.000000000 -0400
+@@ -100,6 +100,7 @@
+   <!-- =================================================================== -->
+ 
+         <target name="junit">
++          <mkdir dir="${tmp.dir}" />
+           <junit printsummary="yes">
+             <formatter type="plain" />
+             <batchtest todir="${tmp.dir}">
+@@ -134,11 +135,11 @@
+             includes="**/run/jahmm/** **/run/distributions/**"
+             excludes="**run/jahmm/apps"
+           />
+-          <signjar alias="francois" storepass="${keystore-password}">
++          <!--<signjar alias="francois" storepass="${keystore-password}">
+ 	    <fileset dir=".">
+               <include name="${lib.dir}/jahmm*.jar" />
+             </fileset>
+-	  </signjar>
++	  </signjar>-->
+    	</target>
+ 
+ 
