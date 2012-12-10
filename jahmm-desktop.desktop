@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=JahmmViz
+GenericName=Hidden Markov Model (HMM) Visualizer
+Exec=jahmm-viz
+Icon=
+Terminal=false
+Type=Application
+Categories=Development;Java;
+Version=1.0

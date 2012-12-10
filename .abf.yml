@@ -1,5 +1,3 @@
 sources:
-  "jahmm-0.6.1.pom:"	1d49e658f6f836911f96e9384d690680ad30bea0
-  "jahmm-0.6.1.tar.gz:"	794a14b1855815ddcb2a78c71b45b40e649fbe0b
-  "jahmm-desktop.desktop:"	06f70ce56307e45dc6fd394f3ba2c8cad1ad38c8
-  "jahmm-userguide-0.6.1-src.tar.gz:"	3c6024fb9b10235ba1aca1c0f21b307d84149058
+  "jahmm-0.6.1.tar.gz": 794a14b1855815ddcb2a78c71b45b40e649fbe0b
+  "jahmm-userguide-0.6.1-src.tar.gz": 3c6024fb9b10235ba1aca1c0f21b307d84149058

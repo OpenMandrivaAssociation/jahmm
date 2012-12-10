@@ -145,12 +145,12 @@ popd
 
 # javadoc
 %{__mkdir_p} %{buildroot}%{_javadocdir}/%{name}-%{version}
-%{__cp} -a javadoc/* %{buildroot}%{_javadocdir}/%{name}-%{version}
+cp -pr javadoc/* %{buildroot}%{_javadocdir}/%{name}-%{version}
 %{__ln_s} %{name}-%{version} %{buildroot}%{_javadocdir}/%{name}
 
 # demo
 %{__mkdir_p} %{buildroot}%{_datadir}/%{name}
-%{__cp} -a resources/* %{buildroot}%{_datadir}/%{name}
+cp -pr resources/* %{buildroot}%{_datadir}/%{name}
 %{__chmod} 0755 %{buildroot}%{_datadir}/%{name}/*.sh
 
 # scripts
@@ -242,3 +242,27 @@ jahmm_script %{name} be.ac.ulg.montefiore.run.jahmm.apps.cli.Cli
 %files demo
 %defattr(-,root,root,0755)
 %{_datadir}/%{name}/*
+
+
+%changelog
+* Thu Aug 07 2008 Thierry Vignaud <tvignaud@mandriva.com> 0:0.6.1-3.0.2mdv2009.0
++ Revision: 267171
+- rebuild early 2009.0 package (before pixel changes)
+
+* Fri May 09 2008 David Walluck <walluck@mandriva.org> 0:0.6.1-0.0.2mdv2009.0
++ Revision: 204998
+- add macros to userguide URL
+- remove strict Requires on java-gcj-compat
+- fix demo Requires and remove AutoReqProv line
+- use macros for gcj_support scriptlets
+
+* Tue Apr 29 2008 David Walluck <walluck@mandriva.org> 0:0.6.1-0.0.1mdv2009.0
++ Revision: 199078
+- BuildRequires: java-rpmbuild
+- enable gcj_support
+- comment out JahmmViz script (unused)
+- import jahmm
+
+
+* Wed Mar 19 2008 David Walluck <dwalluck@redhat.com> 0:0.6.1-0.0.1
+- release
