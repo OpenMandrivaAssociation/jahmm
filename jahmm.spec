@@ -37,7 +37,7 @@ Epoch:          0
 Summary:        Java implementation of Hidden Markov Model (HMM) related algorithms
 License:        GPLv2+
 Group:          Development/Java
-URL:            http://www.run.montefiore.ulg.ac.be/~francois/software/jahmm/
+URL:            https://www.run.montefiore.ulg.ac.be/~francois/software/jahmm/
 Source0:        http://www.run.montefiore.ulg.ac.be/~francois/software/jahmm/files/jahmm-%{version}.tar.gz
 Source1:        %{name}-%{version}.pom
 Source2:        %{name}-desktop.desktop
